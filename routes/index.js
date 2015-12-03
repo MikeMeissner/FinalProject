@@ -1,6 +1,18 @@
 var express = require('express');
+var passport = require('passport');
 var router = express.Router();
 
+var User = require('../models/user');
+
+/* Utility function to check if user is authenticatd */
+function requireAuth(req, res, next){
+  
+    // check if the user is logged in
+  if(!req.isAuthenticated()){
+    return res.redirect('/login');
+  }
+  next();
+}
 
 /* GET home page. */
 router.get('/', function(req, res, next) {

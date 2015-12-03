@@ -20,6 +20,8 @@ mongoose.connection.on('error', function() {
 
 var app = express();
 
+require('./config/passport')(passport);
+
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -31,6 +33,18 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// Session setup
+app.use(session({
+  secret: 'someSecret',
+  saveUninitialized: true,
+  resave: true
+}));
+
+// part of passport configuration
+app.use(flash());
+app.use(passport.initialize());
+app.use(passport.session());
 
 app.use('/', routes);
 app.use('/users', users);
