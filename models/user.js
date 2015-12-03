@@ -1,8 +1,16 @@
+/*
+ * user.js
+ * Rob Page, Josh Mangoff, Mike Meissner
+ * RJM Surveys
+ * Builds users to allow login, called from register
+ */
+
 // Import mongoose and bcrypt
 var mongoose = require('mongoose');
 var bcrypt = require('bcrypt-nodejs');
 var Schema = mongoose.Schema;
 
+// user creation plan
 var UserSchema = new Schema({
   username: String,
   password: String,
