@@ -28,12 +28,26 @@ router.get('/surveys', function(req, res, next) {
    });
 });
 
-/* GET register page. */
-router.get('/register', function(req, res, next) {
-  res.render('register', { 
-    title: 'Register',
-   });
+/* GET registration page */
+router.get('/register', function (req, res, next) {
+    if (!req.user) {
+        res.render('register', {
+            title: 'Register',
+            messages: req.flash('registerMessage'),
+        });
+    }
+    else {
+        return res.redirect('/');
+    }
 });
+ 
+/* POST signup data. */
+router.post('/register', passport.authenticate('local-registration', {
+    //Success go to Profile Page / Fail go to Signup page
+    successRedirect : '/',
+    failureRedirect : '/register',
+    failureFlash : true
+}));
 
 /* GET Login page. */
 router.get('/login', function (req, res, next) {
