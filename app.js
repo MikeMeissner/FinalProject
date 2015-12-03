@@ -4,9 +4,19 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var session = require('express-session');
+var mongoose = require('mongoose');
+var flash = require('connect-flash');
+var passport = require('passport');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
+
+var DB = require('./config/db.js');
+mongoose.connect(DB.url);
+mongoose.connection.on('error', function() {
+  console.error('MongoDB Connection Failed..');
+});
 
 var app = express();
 
