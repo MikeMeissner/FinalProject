@@ -1,3 +1,11 @@
+/*
+ * index.js
+ * Rob Page, Josh Mangoff, Mike Meissner
+ * RJM Surveys
+ * Redirects users to pages
+ */
+
+// requrirements
 var express = require('express');
 var passport = require('passport');
 var router = express.Router();
