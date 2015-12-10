@@ -1,3 +1,10 @@
+/*
+ * routes\account.js
+ * Rob Page, Josh Mangoff, Mike Meissner
+ * RJM Surveys
+ * Redirects users to pages for creating and editing a user
+ */
+
 var express = require('express');
 var passport = require('passport');
 var router = express.Router();

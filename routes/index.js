@@ -1,5 +1,5 @@
 /*
- * index.js
+ * routes\index.js
  * Rob Page, Josh Mangoff, Mike Meissner
  * RJM Surveys
  * Redirects users to pages
