@@ -18,12 +18,6 @@ mongoose.connection.on('error', function() {
   console.error('MongoDB Connection Failed..');
 });
 
-var DB = require('./config/db.js');
-mongoose.connect(DB.url);
-mongoose.connection.on('error', function() {
-  console.error('MongoDB Connection Failed..');
-});
-
 var app = express();
 
 require('./config/passport')(passport);
