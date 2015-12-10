@@ -49,7 +49,7 @@ app.use(passport.session());
 
 app.use('/', routes);
 app.use('/account', user);
-app.use('/survey', surveys);
+app.use('/surveys', surveys);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

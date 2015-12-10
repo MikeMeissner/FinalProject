@@ -6,10 +6,10 @@ var Schema = mongoose.Schema;
 var SurveysSchema = new Schema({
 	surveyName: String,
 	username: String,
-	numQuestions: int,
+	numQuestions: String,
 	surveyType: String,
 	questions: String,
-	answerSelected: int,
+	answerSelected: String,
 	startDate: {type: Date},
 	endDate: {type: Date}
 }, {

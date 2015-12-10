@@ -22,7 +22,7 @@ function requireAuth(req, res, next){
   next();
 }
 
-/* Render User main page. */
+/* Render survey list main page. */
 router.get('/', function (req, res, next) {
     Survey.find(function (err, survey) {
         if (err) {
@@ -32,10 +32,12 @@ router.get('/', function (req, res, next) {
         else {
             res.render('survey/index', {
                 title: 'Surveys',
-                survey: survey,
+                surveys: survey,
                 surveyName: req.surveys ? req.surveys.surveyName : '',
                 displayName: req.user ? req.user.displayName : ''
             });
         }
     });
 });
+
+module.exports = router;

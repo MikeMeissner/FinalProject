@@ -30,14 +30,6 @@ router.get('/', function(req, res, next) {
    });
 });
 
-/* GET surveys page. */
-router.get('/surveys', function(req, res, next) {
-  res.render('survey/index', { 
-    title: 'Surveys',
-    displayName: req.user ? req.user.displayName : ''
-   });
-});
-
 /* GET registration page */
 router.get('/register', function (req, res, next) {
     if (!req.user) {
