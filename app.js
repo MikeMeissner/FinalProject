@@ -11,6 +11,7 @@ var passport = require('passport');
 
 var routes = require('./routes/index');
 var user = require('./routes/account');
+var surveys = require('./routes/survey');
 
 var DB = require('./config/db.js');
 mongoose.connect(DB.url);
@@ -48,6 +49,7 @@ app.use(passport.session());
 
 app.use('/', routes);
 app.use('/account', user);
+app.use('/survey', surveys);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
