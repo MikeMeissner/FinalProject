@@ -25,7 +25,11 @@ router.get('/', requireAuth, function (req, res, next) {
             res.render('user', {
                 title: 'User',
                 user: user,
-                displayName: req.user ? req.user.displayName : ''
+                username: req.user ? req.user.username : '',
+                displayName: req.user ? req.user.displayName : '',
+                email: req.user ? req.user.email : '',
+                created: req.user ? req.user.created : '',
+                updated: req.user ? req.user.updated : ''
             });
         }
     });
