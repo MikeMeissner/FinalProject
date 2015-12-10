@@ -1,0 +1,40 @@
+<% include ../partials/header.ejs %>            
+<main class="container">
+    <h1>My Account</h1>
+    <div class="col-sm-4">
+    <table>
+        <th>
+            Email
+        </th>
+        <th>
+            Username
+        </th>
+        <th>
+            Display Name
+        </th>
+        <th>
+            Password
+        </th>
+        <tr>
+            <td>
+                <%= email %>
+            </td>
+            <td>
+                <%= username %>
+            </td>
+            <td>
+                <%= displayName %>
+            </td>
+            <td>
+                ******
+            </td>
+        </tr>
+        
+    </table>
+    <a href="/account/<%= id %>" title="Update"  class="btn btn-default">
+                    <i class="fa fa-pencil-square-o"></i>  Update
+                </a>
+    </div>
+
+</main>
+<% include ../partials/footer.ejs %>

@@ -10,7 +10,13 @@ var flash = require('connect-flash');
 var passport = require('passport');
 
 var routes = require('./routes/index');
-var users = require('./routes/users');
+var user = require('./routes/account');
+
+var DB = require('./config/db.js');
+mongoose.connect(DB.url);
+mongoose.connection.on('error', function() {
+  console.error('MongoDB Connection Failed..');
+});
 
 var DB = require('./config/db.js');
 mongoose.connect(DB.url);
@@ -47,7 +53,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/', routes);
-app.use('/users', users);
+app.use('/account', user);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
