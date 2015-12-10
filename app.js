@@ -10,7 +10,7 @@ var flash = require('connect-flash');
 var passport = require('passport');
 
 var routes = require('./routes/index');
-var user = require('./routes/user');
+var user = require('./routes/account');
 
 var DB = require('./config/db.js');
 mongoose.connect(DB.url);
@@ -47,7 +47,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use('/', routes);
-app.use('/user', user);
+app.use('/account', user);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

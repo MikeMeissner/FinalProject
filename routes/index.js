@@ -62,13 +62,13 @@ router.get('/login', function (req, res, next) {
         });
     }
     else {
-        return res.redirect('/surveys');
+        return res.redirect('/');
     }
 });
 
 /* Process the Login Request */
 router.post('/login', passport.authenticate('local-login', {
-    successRedirect: '/',
+    successRedirect: '/account',
     failureRedirect: '/login',
     failureFlash: true
 }));
