@@ -1,4 +1,3 @@
 node_modules
 public/lib
-models/surveys.js
 config/db.js
