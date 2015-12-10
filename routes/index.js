@@ -32,7 +32,7 @@ router.get('/', function(req, res, next) {
 
 /* GET surveys page. */
 router.get('/surveys', function(req, res, next) {
-  res.render('surveys', { 
+  res.render('survey/index', { 
     title: 'Surveys',
     displayName: req.user ? req.user.displayName : ''
    });

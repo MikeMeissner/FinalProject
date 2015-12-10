@@ -1,0 +1,32 @@
+<% include ../partials/header.ejs %>
+
+<main class="container">
+    <h1>All Surveys</h1>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+        </div> <!-- panel-heading -->
+        <% if (surveys.length > 0) { %>
+        <div class="panel-body table-responsive">
+            <table class="table table-bordered table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Survey Name</th>
+                        <th></th>
+                    </tr>
+                </thead>
+                </tbody>
+                <% for (var i = 0; i < surveys.length; i++) { %>
+                <tr>
+                    <td>
+                        <%= surveys[i].surveyName %>
+                    </td> 
+                </tr>
+                <% } %>
+                </tbody>
+            </table>
+        </div> <!-- panel-body -->
+        <% } %>
+    </div><!-- panel panel-default -->
+
+</main>
+<% include ../partials/footer.ejs %>
