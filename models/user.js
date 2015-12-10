@@ -2,7 +2,7 @@
  * user.js
  * Rob Page, Josh Mangoff, Mike Meissner
  * RJM Surveys
- * Builds users to allow login, called from register
+ * Builds user to allow login, called from register
  */
 
 // Import mongoose and bcrypt

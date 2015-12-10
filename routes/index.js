@@ -26,6 +26,7 @@ function requireAuth(req, res, next){
 router.get('/', function(req, res, next) {
   res.render('index', { 
     title: 'Home',
+    displayName: req.user ? req.user.displayName : ''
    });
 });
 
@@ -33,6 +34,7 @@ router.get('/', function(req, res, next) {
 router.get('/surveys', function(req, res, next) {
   res.render('surveys', { 
     title: 'Surveys',
+    displayName: req.user ? req.user.displayName : ''
    });
 });
 
@@ -42,6 +44,7 @@ router.get('/register', function (req, res, next) {
         res.render('register', {
             title: 'Register',
             messages: req.flash('registerMessage'),
+            displayName: req.user ? req.user.displayName : ''
         });
     }
     else {
@@ -63,10 +66,11 @@ router.get('/login', function (req, res, next) {
         res.render('login', {
             title: 'Login',
             messages: req.flash('loginMessage'),
+            displayName: req.user ? req.user.displayName : ''
         });
     }
     else {
-        return res.redirect('/surveys');
+        return res.redirect('/');
     }
 });
 

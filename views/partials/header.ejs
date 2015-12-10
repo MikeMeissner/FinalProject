@@ -52,10 +52,45 @@
           <li>
             <% } %>
             <a href="/surveys">Surveys</a></li>
+       
+              <% if (displayName) { %>
+                                   
             
-        </ul> <!-- nav navbar-nav navbar-left -->
+            
+        <% if(title == "Create Survey" ) { %>
+            <li class="active">
+          <% } else { %>
+          <li>
+            <% } %>
+            <a href="/surveys">Create Survey</a></li>
         
+        <% if(title == "My Surveys" ) { %>
+            <li class="active">
+          <% } else { %>
+          <li>
+            <% } %>
+            <a href="/surveys"><%= displayName %>'s Surveys</a></li>
+        
+            <% } %>
+        
+        
+        </ul> <!-- nav navbar-nav navbar-left -->
         <ul class="nav navbar-nav navbar-right">
+        
+            <li>
+              <% if (displayName) { %>
+            </li>
+                     
+          <% if(title == "Account" ) { %>
+            <li class="active">
+          <% } else { %>
+          <li>
+            <% } %>
+            <a href="/account">Edit Account</a></li>
+               
+            <li><a href="/logout">Logout</a></li>
+            <% } else {%>
+            
           <% if(title == "Register" ) { %>
             <li class="active">
           <% } else { %>
@@ -63,13 +98,13 @@
             <% } %>
             <a href="/register">Register</a></li>
             
-        <ul class="nav navbar-nav navbar-right">
           <% if(title == "Login" ) { %>
             <li class="active">
           <% } else { %>
           <li>
             <% } %>
             <a href="/login">Login</a></li>
+            <% } %>
             
         </ul> <!-- nav navbar-nav navbar-right -->
       </div> <!-- collapse navbar-collapse -->
