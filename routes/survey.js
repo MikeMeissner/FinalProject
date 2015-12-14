@@ -58,6 +58,28 @@ router.get('/create', function (req, res, next) {
     });
 });
 
+router.post('/create', requireAuth, function (req, res, next) {
+    var survey = new Survey(req.body);
+    Survey.create({
+        surveyName: req.body.surveyName,
+        username: req.body.username,
+	    numQuestions: req.body.numQuestions,
+	    surveyType: req.body.surveyType,   
+        questions: "dummy data",
+        answerSelected: "more dummy data", 
+        startDate: req.body.startDate,
+        endDate: req.body.endDate
+    }, function (err, Survey) {
+        if (err) {
+            console.log(err);
+            res.end(err);
+        }
+        else {
+            res.redirect('/surveys/view');
+        }
+    });
+});
+
 router.get('/view', function (req, res, next) {
     Survey.find(function (err, survey) {
         if (err) {
