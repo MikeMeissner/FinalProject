@@ -40,4 +40,38 @@ router.get('/', function (req, res, next) {
     });
 });
 
+router.get('/create', function (req, res, next) {
+    Survey.find(function (err, survey) {
+        if (err) {
+            console.log(err);
+            res.end(err);
+        }
+        else {
+            res.render('survey/createSurvey', {
+                title: 'Create Surveys',
+                surveys: survey,
+                surveyName: req.surveys ? req.surveys.surveyName : '',
+                displayName: req.user ? req.user.displayName : ''
+            });
+        }
+    });
+});
+
+router.get('/view', function (req, res, next) {
+    Survey.find(function (err, survey) {
+        if (err) {
+            console.log(err);
+            res.end(err);
+        }
+        else {
+            res.render('survey/yourSurveys', {
+                title: 'View Surveys',
+                surveys: survey,
+                surveyName: req.surveys ? req.surveys.surveyName : '',
+                displayName: req.user ? req.user.displayName : ''
+            });
+        }
+    });
+});
+
 module.exports = router;
