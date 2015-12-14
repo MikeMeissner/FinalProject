@@ -51,7 +51,8 @@ router.get('/create', function (req, res, next) {
                 title: 'Create Surveys',
                 surveys: survey,
                 surveyName: req.surveys ? req.surveys.surveyName : '',
-                displayName: req.user ? req.user.displayName : ''
+                displayName: req.user ? req.user.displayName : '',
+                username: req.user ? req.user.username : ''
             });
         }
     });

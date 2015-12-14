@@ -16,7 +16,7 @@
             </fieldset>
             <fieldset class="form-group">
                 <label for="username">Username: *</label>
-                <input name="username" type="text" class="form-control" required />
+                <input name="username" type="text" class="form-control" required value="<%= username %>"/>
             </fieldset>
             <fieldset class="form-group">
                 <label for="numQuestions">Number of Questions: *</label>
@@ -44,15 +44,15 @@
             </fieldset>
             <fieldset class="form-group">
                 <label for="startDate">Start Date: *</label>
-                <input name="startDate" type="text" class="form-control" required />
+                <input name="startDate" type="date" class="form-control" required />
             </fieldset>
             <fieldset class="form-group">
                 <label for="endDate">End Date: *</label>
-                <input name="endDate" type="text" class="form-control" required />
+                <input name="endDate" type="date" class="form-control" required />
             </fieldset>
             <fieldset class="form-group text-right">
-                <button type="submit" class="btn btn-primary" title="Update">
-                    <i class="fa fa-pencil-square-o"></i> Update</button>
+                <button type="submit" class="btn btn-primary" title="Submit">
+                    <i class="fa fa-pencil-square-o"></i> Submit</button>
                 </a>
                 <a href="/" title="Cancel"  class="btn btn-default">
                     <i class="fa fa-undo"></i>  Cancel
