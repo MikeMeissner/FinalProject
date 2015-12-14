@@ -1,4 +1,9 @@
-// Todo Schema
+/*
+ * models\surveys.js
+ * Rob Page, Josh Mangoff, Mike Meissner
+ * RJM Surveys
+ * Builds survey to allow questions and answers
+ */
 
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;

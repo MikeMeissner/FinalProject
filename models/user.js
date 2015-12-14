@@ -1,5 +1,5 @@
 /*
- * user.js
+ * models\user.js
  * Rob Page, Josh Mangoff, Mike Meissner
  * RJM Surveys
  * Builds user to allow login, called from register
