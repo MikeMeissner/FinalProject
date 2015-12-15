@@ -17,16 +17,31 @@
             <table class="table table-bordered table-striped table-hover">
                 <thead>
                     <tr>
+                        <th>Survey Creator</th>
                         <th>Survey Name</th>
-                        <th></th>
+                        <th>Survey Type</th>
+                        <th>Survey Start Date</th>
+                        <th>Survey End Date</th>
                     </tr>
                 </thead>
                 </tbody>
                 <% for (var i = 0; i < surveys.length; i++) { %>
                 <tr>
                     <td>
-                        <%= surveys[i].surveyName %>
+                        <%= surveys[i].username %>
                     </td> 
+                    <td>
+                        <%= surveys[i].surveyName %>
+                    </td>
+                    <td>
+                        <%= surveys[i].surveyType %>
+                    </td>
+                    <td>
+                        <%= surveys[i].startDate %>
+                    </td>
+                    <td>
+                        <%= surveys[i].endDate %>
+                    </td>
                 </tr>
                 <% } %>
                 </tbody>

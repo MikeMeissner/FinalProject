@@ -18,7 +18,9 @@
                 <thead>
                     <tr>
                         <th>Survey Name</th>
-                        <th></th>
+                        <th>Survey Type</th>
+                        <th>Survey Start Date</th>
+                        <th>Survey End Date</th>
                     </tr>
                 </thead>
                 </tbody>
@@ -27,6 +29,15 @@
                 <tr>
                     <td>
                         <%= surveys[i].surveyName %>
+                    </td>
+                    <td>
+                        <%= surveys[i].surveyType %>
+                    </td>
+                    <td>
+                        <%= surveys[i].startDate %>
+                    </td>
+                    <td>
+                        <%= surveys[i].endDate %>
                     </td> 
                 </tr>
                 <% } %>
