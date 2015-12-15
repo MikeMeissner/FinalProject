@@ -90,6 +90,7 @@ router.get('/view', function (req, res, next) {
             res.render('survey/yourSurveys', {
                 title: 'View Surveys',
                 surveys: survey,
+                username: req.user ? req.user.username : '',
                 surveyName: req.surveys ? req.surveys.surveyName : '',
                 displayName: req.user ? req.user.displayName : ''
             });

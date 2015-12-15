@@ -23,10 +23,17 @@
                 </thead>
                 </tbody>
                 <% for (var i = 0; i < surveys.length; i++) { %>
-                <% if (surveys[i].username.equals(username)){ %>
+                <% if (surveys[i].username === username){ %>
                 <tr>
                     <td>
                         <%= surveys[i].surveyName %>
+                    </td> 
+                </tr>
+                <% } %>
+                <% if(!surveys[i].username === username){ %>
+                <tr>
+                    <td>
+                        No Surveys
                     </td> 
                 </tr>
                 <% } %>
