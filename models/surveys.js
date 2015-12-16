@@ -11,10 +11,16 @@ var Schema = mongoose.Schema;
 var SurveysSchema = new Schema({
 	surveyName: String,
 	username: String,
-	numQuestions: String,
-	surveyType: String,
-	questions: String,
-	answerSelected: String,
+	surveyMultipleChoice: Boolean,
+	question: String,
+	answerA: Number,
+	answerB: Number,
+	answerC: Number,
+	answerD: Number,
+	answertextA: String,
+	answertextB: String,
+	answertextC: String,
+	answertextD: String,
 	startDate: {type: Date},
 	endDate: {type: Date}
 }, {

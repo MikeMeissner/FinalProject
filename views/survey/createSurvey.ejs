@@ -15,32 +15,27 @@
                 <input name="surveyName" type="text" class="form-control" required autofocus />
             </fieldset>
             <fieldset class="form-group">
-                <label for="username">Username: *</label>
-                <input name="username" type="text" class="form-control" required value="<%= username %>"/>
+                <input name="username" type="hidden" class="form-control" required value="<%= username %>"/>
             </fieldset>
             <fieldset class="form-group">
-                <label for="numQuestions">Number of Questions: *</label>
-                <input name="numQuestions" type="text" class="form-control" required />
+                <label for="surveyMultipleChoice">Survey Type: *</label>
+                <input name="surveyMultipleChoice" type="checkbox" class="form-control" required />
             </fieldset>
             <fieldset class="form-group">
-                <label for="surveyType">Survey Type: *</label>
-                <input name="surveyType" type="text" class="form-control" required />
-            </fieldset>
-            <fieldset class="form-group">
-                <label for="questions1">Question1: *</label>
-                <input name="questions1" type="text" class="form-control" required />
+                <label for="answertextA">Option 1: *</label>
+                <input name="answertextA" type="text" class="form-control" required />
             </fieldset>
              <fieldset class="form-group">
-                <label for="questions2">Question2: *</label>
-                <input name="questions2" type="text" class="form-control" required />
+                <label for="answertextB">Option 2: *</label>
+                <input name="answertextB" type="text" class="form-control" required />
             </fieldset>
              <fieldset class="form-group">
-                <label for="questions3">Question3: *</label>
-                <input name="questions3" type="text" class="form-control" required />
+                <label for="answertextC">Option 3: *</label>
+                <input name="answertextC" type="text" class="form-control" required />
             </fieldset>
              <fieldset class="form-group">
-                <label for="questions4">Question4: *</label>
-                <input name="questions4" type="text" class="form-control" required />
+                <label for="answertextD">Option 4: *</label>
+                <input name="answertextD" type="text" class="form-control" required />
             </fieldset>
             <fieldset class="form-group">
                 <label for="startDate">Start Date: *</label>
@@ -62,6 +57,3 @@
     </div>
 </main>
 <% include ../partials/footer.ejs %>
-
-
-	questions: String,
