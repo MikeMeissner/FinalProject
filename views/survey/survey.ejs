@@ -1,10 +1,3 @@
-<%#
-    views\survey\yourSurveys.ejs
-    Rob Page, Josh Mangoff, Mike Meissner
-    RJM Surveys
-    Contains table for showing surveys created by the user
-%>
-
 <% include ../partials/header.ejs %>
 
 <main class="container">
@@ -25,10 +18,11 @@
                 </thead>
                 </tbody>
                 <% for (var i = 0; i < surveys.length; i++) { %>
+                <h1><%= surveys.id %></h1>
                 <% if (surveys[i].username === username){ %>
                 <tr>
                     <td>
-                        <a href="/surveys/survey"><%= surveys[i].surveyName %></a>
+                        <%= surveys[i].surveyName %>
                     </td>
                     <td>
                         <%= surveys[i].surveyType %>

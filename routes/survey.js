@@ -98,4 +98,24 @@ router.get('/view', function (req, res, next) {
     });
 });
 
+router.get('/survey', function (req, res, next) {
+    var id = req.params.id;
+    Survey.find(function (err, survey) {
+        if (err) {
+            console.log(err);
+            res.end(err);
+        }
+        else {
+            res.render('survey/survey', {
+                title: 'Answer Surveys',
+                surveys: survey,
+                id: req.survey ? req.survey.id : '',
+                username: req.user ? req.user.username : '',
+                surveyName: req.surveys ? req.surveys.surveyName : '',
+                displayName: req.user ? req.user.displayName : ''
+            });
+        }
+    });
+});
+
 module.exports = router;
