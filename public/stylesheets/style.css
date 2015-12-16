@@ -14,3 +14,13 @@ hr.background-grey
   margin-bottom: 0px;
   border-top: 20px solid lightgray;
 }
+
+div.left
+{
+  float: left;
+}
+
+div.right
+{
+  float: right;
+}
