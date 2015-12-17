@@ -13,6 +13,7 @@ var SurveysSchema = new Schema({
 	username: String,
 	surveyMultipleChoice: Boolean,
 	question: String,
+	surveyNumber: Number,
 	answerA: Number,
 	answerB: Number,
 	answerC: Number,

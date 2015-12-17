@@ -33,6 +33,7 @@ router.get('/', function (req, res, next) {
             res.render('survey/index', {
                 title: 'Surveys',
                 surveys: survey,
+                id: req.surveys ? req.surveys.id : '',
                 surveyName: req.surveys ? req.surveys.surveyName : '',
                 displayName: req.user ? req.user.displayName : ''
             });
@@ -40,7 +41,7 @@ router.get('/', function (req, res, next) {
     });
 });
 
-router.get('/create', function (req, res, next) {
+router.get('/create', requireAuth, function (req, res, next) {
     Survey.find(function (err, survey) {
         if (err) {
             console.log(err);
@@ -80,7 +81,7 @@ router.post('/create', requireAuth, function (req, res, next) {
     });
 });
 
-router.get('/view', function (req, res, next) {
+router.get('/view', requireAuth, function (req, res, next) {
     Survey.find(function (err, survey) {
         if (err) {
             console.log(err);
@@ -90,6 +91,7 @@ router.get('/view', function (req, res, next) {
             res.render('survey/yourSurveys', {
                 title: 'View Surveys',
                 surveys: survey,
+                id: req.surveys ? req.surveys.id : '',
                 username: req.user ? req.user.username : '',
                 surveyName: req.surveys ? req.surveys.surveyName : '',
                 displayName: req.user ? req.user.displayName : ''
@@ -98,7 +100,7 @@ router.get('/view', function (req, res, next) {
     });
 });
 
-router.get('/survey', function (req, res, next) {
+router.get('/:id', function (req, res, next) {
     var id = req.params.id;
     Survey.find(function (err, survey) {
         if (err) {
@@ -106,7 +108,7 @@ router.get('/survey', function (req, res, next) {
             res.end(err);
         }
         else {
-            res.render('survey/survey', {
+            res.render('survey/surveyAnswer', {
                 title: 'Answer Surveys',
                 surveys: survey,
                 id: req.survey ? req.survey.id : '',

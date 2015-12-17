@@ -28,7 +28,7 @@
                 <% if (surveys[i].username === username){ %>
                 <tr>
                     <td>
-                        <a href="/surveys/survey"><%= surveys[i].surveyName %></a>
+                        <a href="/survey/<%= surveys[i].id %>"><%= surveys[i].surveyName %></a>
                     </td>
                     <td>
                         <%= surveys[i].surveyType %>

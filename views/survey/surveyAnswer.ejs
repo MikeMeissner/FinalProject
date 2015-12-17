@@ -1,0 +1,31 @@
+<% include ../partials/header.ejs %>
+
+<main class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+        </div> <!-- panel-heading -->
+		
+	   <fieldset class="form-group">
+                    <label for="answertextD">: *</label>
+                    <input name="answertextD" type="text" class="form-control" required />
+                </fieldset>
+                <fieldset class="form-group">
+                    A: <input type="radio" name="answer" value="A" class="form-control" required />
+                    B: <input type="radio" name="answer" value="B" class="form-control" required />
+                    
+                    C: <input type="radio" name="answer" value="C" class="form-control" required />
+                    
+                    D: <input type="radio" name="answer" value="D" class="form-control" required />
+                </fieldset>
+                <fieldset class="form-group text-right">
+                    <button type="submit" class="btn btn-primary" title="Submit">
+                        <i class="fa fa-pencil-square-o"></i> Submit</button>
+                    </a>
+                    <a href="/survey" title="Cancel"  class="btn btn-default">
+                        <i class="fa fa-undo"></i>  Cancel
+                    </a>
+       </fieldset>
+           
+
+</main>
+<% include ../partials/footer.ejs %>
