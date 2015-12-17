@@ -50,7 +50,8 @@ app.use(passport.session());
 app.use('/', routes);
 app.use('/account', user);
 app.use('/survey', survey);
-app.use('/surveys', survey);
+app.use('/surveys', survey)
+app.use('/results', survey);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

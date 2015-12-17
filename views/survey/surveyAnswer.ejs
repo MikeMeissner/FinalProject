@@ -1,32 +1,40 @@
 <% include ../partials/header.ejs %>
-
+</script>
 <main class="container">
     <div class="panel panel-default">
         <div class="panel-heading">
         </div> <!-- panel-heading -->
-		
+	<form method ="post">	
 	   <fieldset class="form-group">
                     <label for="title"><h1><%= surveys.surveyName %></h1></label><br>
                     <label for="desc"><h2><%= surveys.question %></h2></label>
                 </fieldset>
                 <fieldset class="form-group">
-                    A: <%= surveys.answertextA %> <input type="radio" name="answer" value="1" class="form-control" required />
+                    A: <%= surveys.answertextA %> 
+                    <input type="radio" title="a" name="answer">
+                    Option A</input>
                     
-                    B: <%= surveys.answertextB %> <input type="radio" name="answer" value="1" class="form-control" required />
+                    B: <%= surveys.answertextB %> 
+                    <input type="radio" title="b" name="answer">
+                    Option B</input>
                     
-                    C: <%= surveys.answertextC %> <input type="radio" name="answer" value="1" class="form-control" required />
+                    C: <%= surveys.answertextC %> 
+                    <input type="radio" title="c" name="answer">
+                    Option C</input>
                     
-                    D: <%= surveys.answertextD %> <input type="radio" name="answer" value="1" class="form-control" required />
+                    D: <%= surveys.answertextD %> 
+                    <input type="radio" title="d" name="answer">
+                    Option D</input>
+                
                 </fieldset>
                 <fieldset class="form-group text-right">
+                    
                     <button type="submit" class="btn btn-primary" title="Submit">
-                        <i class="fa fa-pencil-square-o"></i> Submit</button>
-                    </a>
-                    <a href="/survey" title="Cancel"  class="btn btn-default">
-                        <i class="fa fa-undo"></i>  Cancel
+                    Submit</button>
+                    <a href="/survey" title="Cancel"  class="btn btn-default" >
+                        <i class="fa fa-undo"></i> Cancel
                     </a>
        </fieldset>
-           
-
+       </form>    
 </main>
 <% include ../partials/footer.ejs %>

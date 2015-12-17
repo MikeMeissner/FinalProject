@@ -103,16 +103,17 @@ router.get('/view', requireAuth, function (req, res, next) {
     });
 });
 
-router.get('/results/:id', function (req, res, next) {
-    Survey.find(function (err, survey) {
+router.get('/survey/results/:id', function (req, res, next) {
+    var id = req.params.id;
+    Survey.findById(id, function (err, survey) {
         if (err) {
             console.log(err);
             res.end(err);
         }
         else {
-            res.render('survey/surveyResults', {
+            res.render('surveys/surveyResults', {
                 title: 'Survey Results',
-                 surveys: survey,
+                surveys: survey,
                 id: req.surveys ? req.surveys.id : '',
                 username: req.user ? req.user.username : '',
                 surveyName: req.surveys ? req.surveys.surveyName : '',
@@ -163,14 +164,18 @@ router.get('/:id', function (req, res, next) {
 /* process the edit form submission */
 router.post('/:id', function (req, res, next) {
     var id = req.params.id;
+    var surveys = new Survey(req.body)
+    
+    surveys._id = id;
       
     // use mongoose to do the update
-    Survey.update({ _id: id}, function (err) {
+    Survey.update({ _id: id}, surveys, function (err) {
         if (err) {
             console.log(err);
             res.end(err);
         }
         else {
+            surveys.answerA + 1;
             res.redirect('survey/surveyResults');
         }
     });
