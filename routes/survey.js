@@ -103,7 +103,7 @@ router.get('/view', requireAuth, function (req, res, next) {
     });
 });
 
-router.get('/survey/results/:id', function (req, res, next) {
+router.get('/results/:id', function (req, res, next) {
     var id = req.params.id;
     Survey.findById(id, function (err, survey) {
         if (err) {
