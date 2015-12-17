@@ -64,12 +64,15 @@ router.post('/create', requireAuth, function (req, res, next) {
     Survey.create({
         surveyName: req.body.surveyName,
         username: req.body.username,
-	    numQuestions: req.body.numQuestions,
-	    surveyType: req.body.surveyType,   
-        questions: "dummy data",
-        answerSelected: "more dummy data", 
-        startDate: req.body.startDate,
-        endDate: req.body.endDate
+	    surveyMultipleChoice: req.body.surveyMultipleChoice,
+	   question: req.body.question,
+	surveyNumber: req.body.surveyNumber,
+	answertextA: req.body.answertextA,
+	answertextB: req.body.answertextB,
+	answertextC: req.body.answertextC,
+	answertextD: req.body.answertextD,
+	startDate: req.body.startDate,
+	endDate: req.body.endDate
     }, function (err, Survey) {
         if (err) {
             console.log(err);
@@ -102,7 +105,7 @@ router.get('/view', requireAuth, function (req, res, next) {
 
 router.get('/:id', function (req, res, next) {
     var id = req.params.id;
-    Survey.find(function (err, survey) {
+    Survey.findById(id, function (err, survey) {
         if (err) {
             console.log(err);
             res.end(err);
@@ -111,10 +114,20 @@ router.get('/:id', function (req, res, next) {
             res.render('survey/surveyAnswer', {
                 title: 'Answer Surveys',
                 surveys: survey,
-                id: req.survey ? req.survey.id : '',
+                id: req.surveys ? req.surveys.id : '',
                 username: req.user ? req.user.username : '',
                 surveyName: req.surveys ? req.surveys.surveyName : '',
-                displayName: req.user ? req.user.displayName : ''
+                displayName: req.user ? req.user.displayName : '',
+                
+	    surveyMultipleChoice: req.surveys ? req.surveys.surveyMultipleChoice : '',
+	   question: req.surveys ? req.surveys.question : '',
+	surveyNumber: req.surveys ? req.surveys.surveyNumber : '',
+	answertextA: req.surveys ? req.surveys.answertextA : '',
+	answertextB: req.surveys ? req.surveys.answertextB : '',
+	answertextC: req.surveys ? req.surveys.answertextC : '',
+	answertextD: req.surveys ? req.surveys.answertextD : '',
+	startDate: req.surveys ? req.surveys.startDate : '',
+	endDate: req.surveys ? req.surveys.endDate : ''
             });
         }
     });
