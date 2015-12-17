@@ -1,0 +1,24 @@
+<% include ../partials/header.ejs %>
+
+<main class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+        </div> <!-- panel-heading -->
+		
+	   <fieldset class="form-group">
+                    <label for="title"><h1><%= surveys.surveyName %></h1></label><br>
+                    <label for="desc"><h2><%= surveys.question %></h2></label>
+                </fieldset>
+                <fieldset class="form-group">
+                    A: <%= surveys.answerTextA %> : <%= surveys.answerA %> 
+                    
+                    B: <%= surveys.answerTextB %> : <%= surveys.answerB %> 
+                    
+                    C: <%= surveys.answerTextC %> : <%= surveys.answerC %> 
+                    
+                    D: <%= surveys.answerTextD %> : <%= surveys.answerD %> 
+                </fieldset>
+           
+
+</main>
+<% include ../partials/footer.ejs %>
