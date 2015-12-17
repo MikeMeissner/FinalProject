@@ -6,16 +6,17 @@
         </div> <!-- panel-heading -->
 		
 	   <fieldset class="form-group">
-                    <label for="answertextD"><%= surveyName %></label>
+                    <label for="answertextD"><%= surveys.surveyName %></label>
                     <input name="answertextD" type="text" class="form-control" required />
                 </fieldset>
                 <fieldset class="form-group">
-                    A: <input type="radio" name="answer" value="A" class="form-control" required />
-                    B: <input type="radio" name="answer" value="B" class="form-control" required />
+                    A: <%= surveys.answertextA %> <input type="radio" name="answer" value="A" class="form-control" required />
                     
-                    C: <input type="radio" name="answer" value="C" class="form-control" required />
+                    B: <%= surveys.answertextB %> <input type="radio" name="answer" value="B" class="form-control" required />
                     
-                    D: <input type="radio" name="answer" value="D" class="form-control" required />
+                    C: <%= surveys.answertextC %> <input type="radio" name="answer" value="C" class="form-control" required />
+                    
+                    D: <%= surveys.answertextD %> <input type="radio" name="answer" value="D" class="form-control" required />
                 </fieldset>
                 <fieldset class="form-group text-right">
                     <button type="submit" class="btn btn-primary" title="Submit">
