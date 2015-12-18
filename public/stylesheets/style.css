@@ -1,8 +1,21 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+div.container.background-white
+{
+  background-color: white;
 }
 
-a {
-  color: #00B7FF;
+body.background-grey
+{
+  background-color: lightgray;
+}
+
+hr.background-grey
+{
+  margin-top: 0px;
+  margin-bottom: 0px;
+  border-top: 20px solid lightgray;
+}
+
+div.left
+{
+  float: left;
 }

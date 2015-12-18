@@ -1,35 +1,31 @@
+<%#
+    views\account\index.ejs
+    Rob Page, Josh Mangoff, Mike Meissner
+    RJM Surveys
+    Contains table that displays a user's information
+%>
+
 <% include ../partials/header.ejs %>            
 <main class="container">
     <h1>My Account</h1>
     <div class="col-sm-4">
-    <table>
-        <th>
-            Email
-        </th>
-        <th>
-            Username
-        </th>
-        <th>
-            Display Name
-        </th>
-        <th>
-            Password
-        </th>
+    <table class="table table-condensed">
         <tr>
-            <td>
-                <%= email %>
-            </td>
-            <td>
-                <%= username %>
-            </td>
-            <td>
-                <%= displayName %>
-            </td>
-            <td>
-                ******
-            </td>
+            <td>Email</td>
+            <td><%= email %></td>
         </tr>
-        
+        <tr>
+            <td>Username</td>
+            <td><%= username %></td>
+        </tr>
+        <tr>
+            <td>Display Name</td>
+            <td><%= displayName %></td>
+        </tr>
+        <tr>
+            <td>Password</td>
+            <td>********</td>
+        </tr>        
     </table>
     <a href="/account/<%= id %>" title="Update"  class="btn btn-default">
                     <i class="fa fa-pencil-square-o"></i>  Update

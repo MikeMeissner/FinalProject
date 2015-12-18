@@ -1,0 +1,43 @@
+<%#
+    views\survey\yourSurveys.ejs
+    Rob Page, Josh Mangoff, Mike Meissner
+    RJM Surveys
+    Contains form that shows the survey, and can be filled out
+%>
+
+<% include ../partials/header.ejs %>
+</script>
+<main class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+        </div> <!-- panel-heading -->
+	<form method ="post">	
+	   <fieldset class="form-group">
+                    <label for="title"><h1><%= surveys.surveyName %></h1></label><br>
+                    <label for="desc"><h2><%= surveys.question %></h2></label>
+                </fieldset>
+                <fieldset class="form-group">
+                    A: <%= surveys.answertextA %> 
+                    <input type="radio" title="a" name="answer" id="a"></input>
+                    <br>
+                    B: <%= surveys.answertextB %> 
+                    <input type="radio" title="b" name="answer" id="b"></input>
+                    <br>
+                    C: <%= surveys.answertextC %> 
+                    <input type="radio" title="c" name="answer" id="c"></input>
+                    <br>
+                    D: <%= surveys.answertextD %> 
+                    <input type="radio" title="d" name="answer" id="d"></input>
+                    <br>
+                </fieldset>
+                <fieldset class="form-group text-right">
+                    
+                    <button type="submit" class="btn btn-primary" title="Submit">
+                    Submit</button>
+                    <a href="/survey" title="Cancel"  class="btn btn-default" >
+                        <i class="fa fa-undo"></i> Cancel
+                    </a>
+       </fieldset>
+       </form>    
+</main>
+<% include ../partials/footer.ejs %>

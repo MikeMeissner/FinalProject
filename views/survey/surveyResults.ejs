@@ -1,0 +1,33 @@
+<%#
+    views\survey\surveyResults.ejs
+    Rob Page, Josh Mangoff, Mike Meissner
+    RJM Surveys
+    Displays number of people who have answered the survey and each option
+%>
+
+<% include ../partials/header.ejs %>
+
+<main class="container">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+        </div> <!-- panel-heading -->
+		
+	   <fieldset class="form-group">
+                    <label for="title"><h1><%= surveys.surveyName %></h1></label><br>
+                    <label for="desc"><h2><%= surveys.question %></h2></label>
+                </fieldset>
+                <fieldset class="form-group">
+                    A: <%= surveys.answertextA %> : <%= surveys.answerA %> 
+                    <br>
+                    B: <%= surveys.answertextB %> : <%= surveys.answerB %> 
+                    <br>
+                    C: <%= surveys.answertextC %> : <%= surveys.answerC %> 
+                    <br>
+                    D: <%= surveys.answertextD %> : <%= surveys.answerD %>
+                    <br>
+                    Total Answers:  <%= surveys.answerA + surveys.answerB + surveys.answerC + surveys.answerD %>
+                    <br>
+                </fieldset>
+           
+</main>
+<% include ../partials/footer.ejs %>

@@ -1,3 +1,11 @@
+/*
+ * routes\index.js
+ * Rob Page, Josh Mangoff, Mike Meissner
+ * RJM Surveys
+ * Redirects users to pages
+ */
+
+// requrirements
 var express = require('express');
 var passport = require('passport');
 var router = express.Router();
@@ -18,14 +26,6 @@ function requireAuth(req, res, next){
 router.get('/', function(req, res, next) {
   res.render('index', { 
     title: 'Home',
-    displayName: req.user ? req.user.displayName : ''
-   });
-});
-
-/* GET surveys page. */
-router.get('/surveys', function(req, res, next) {
-  res.render('surveys', { 
-    title: 'Surveys',
     displayName: req.user ? req.user.displayName : ''
    });
 });
@@ -68,7 +68,7 @@ router.get('/login', function (req, res, next) {
 
 /* Process the Login Request */
 router.post('/login', passport.authenticate('local-login', {
-    successRedirect: '/',
+    successRedirect: '/survey',
     failureRedirect: '/login',
     failureFlash: true
 }));

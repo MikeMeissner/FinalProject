@@ -1,0 +1,59 @@
+<%#
+    views\survey\yourSurveys.ejs
+    Rob Page, Josh Mangoff, Mike Meissner
+    RJM Surveys
+    Contains table for showing surveys created by the user
+%>
+
+<% include ../partials/header.ejs %>
+
+<main class="container">
+    <h1><%= displayName %>'s Surveys</h1>
+    <div class="panel panel-default">
+        <div class="panel-heading">
+        </div> <!-- panel-heading -->
+        <% if (surveys.length > 0) { %>
+        <div class="panel-body table-responsive">
+            <table class="table table-bordered table-striped table-hover">
+                <thead>
+                    <tr>
+                        <th>Survey Name</th>
+                        <th>Survey Type</th>
+                        <th>Survey Start Date</th>
+                        <th>Survey End Date</th>
+                    </tr>
+                </thead>
+                </tbody>
+                <% for (var i = 0; i < surveys.length; i++) { %>
+                <% if (surveys[i].username === username){ %>
+                <tr>
+                    <td>
+                        <a href="/results/<%= surveys[i].id %>"><%= surveys[i].surveyName %></a>
+                    </td>
+                    <td>
+                        <%= surveys[i].surveyType %>
+                    </td>
+                    <td>
+                        <%= surveys[i].startDate %>
+                    </td>
+                    <td>
+                        <%= surveys[i].endDate %>
+                    </td> 
+                </tr>
+                <% } %>
+                <% if(!surveys[i].username === username){ %>
+                <tr>
+                    <td>
+                        No Surveys
+                    </td> 
+                </tr>
+                <% } %>
+                <% } %>
+                </tbody>
+            </table>
+        </div> <!-- panel-body -->
+        <% } %>
+    </div><!-- panel panel-default -->
+
+</main>
+<% include ../partials/footer.ejs %>

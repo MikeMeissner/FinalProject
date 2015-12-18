@@ -1,0 +1,67 @@
+<%#
+    views\survey\createSurvey.ejs
+    Rob Page, Josh Mangoff, Mike Meissner
+    RJM Surveys
+    Contains form for creating surveys
+%>
+
+<% include ../partials/header.ejs %>            
+<main class="container">
+    <h1>Create Survey</h1>
+    <div class="col-sm-4">
+        <form method="post">
+            <div class="left">
+                <fieldset class="form-group">
+                    <label for="surveyName">Survey Name: *</label>
+                    <input name="surveyName" type="text" class="form-control" required autofocus />
+                </fieldset>
+                <fieldset class="form-group">
+                    <input name="username" type="hidden" class="form-control" required value="<%= username %>"/>
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="surveyMultipleChoice">Survey Type: *</label>
+                    <input name="surveyMultipleChoice" type="checkbox" class="form-control" required />
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="question">Question: *</label>
+                    <input name="question" type="text" class="form-control" required />
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="answertextA">Option 1: *</label>
+                    <input name="answertextA" type="text" class="form-control" required />
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="answertextB">Option 2: *</label>
+                    <input name="answertextB" type="text" class="form-control" required />
+                </fieldset>
+            </div>
+                <div class="left">
+                <fieldset class="form-group">
+                    <label for="answertextC">Option 3: *</label>
+                    <input name="answertextC" type="text" class="form-control" required />
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="answertextD">Option 4: *</label>
+                    <input name="answertextD" type="text" class="form-control" required />
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="startDate">Start Date: *</label>
+                    <input name="startDate" type="date" class="form-control" required />
+                </fieldset>
+                <fieldset class="form-group">
+                    <label for="endDate">End Date: *</label>
+                    <input name="endDate" type="date" class="form-control" required />
+                </fieldset>
+                <fieldset class="form-group text-right">
+                    <button type="submit" class="btn btn-primary" title="Submit">
+                        <i class="fa fa-pencil-square-o"></i> Submit</button>
+                    </a>
+                    <a href="/" title="Cancel"  class="btn btn-default">
+                        <i class="fa fa-undo"></i>  Cancel
+                    </a>
+                </fieldset>
+            </div>
+        </form>
+    </div>
+</main>
+<% include ../partials/footer.ejs %>
